@@ -1,5 +1,9 @@
-import natural_numbers import times_one
+import natural_numbers
+import times_one
 
-theorem one_divides ( n : ℕ ) 
+theorem one_divides ( n : ℕ )
 : divides 1 n := by
-  sorry
+    unfold divides
+    exists n
+    rewrite [times_one]
+    rfl
