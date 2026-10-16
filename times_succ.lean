@@ -1,22 +1,23 @@
 import natural_numbers
 import times_zero
-import zero_times
-import succ_times
-import succ_plus
+import plus_zero
 import plus_assoc
 import plus_comm
+import succ_times
 
 theorem times_succ ( m n : ℕ )
 : m * n.succ = m + m * n := by
-  induction m using ℕ.rec
+  induction m
   case zero =>
-    rewrite[zero_times, zero_times] /- get rid of eveyrhting multiplied by zero -/
+    unfold times
     unfold plus
     rfl
   case succ m ih =>
-    unfold times
+    rewrite [succ_times, succ_times]
     rewrite[ih]
-    unfold plus
-    rewrite [plus_comm]
-    -- rewrite [plus_assoc m (m*n)]
-    sorry
+    rewrite[plus_assoc, plus_assoc]
+    rewrite[succ_plus, succ_plus]
+    rewrite [plus_comm n m]
+    rewrite[succ_plus]
+    rewrite[succ_plus]
+    rfl
