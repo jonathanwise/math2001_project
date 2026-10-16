@@ -20,5 +20,12 @@ roots = [
   "times_right_distrib",
   "times_left_distrib",
   "times_assoc",
+  "times_one",
+  "le_refl",
+  "le_trans",
+  "one_divides",
+  "divides_zero",
+  "parity",
+  "binomial",
 ]
 
