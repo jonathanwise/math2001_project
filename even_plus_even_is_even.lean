@@ -7,10 +7,8 @@ theorem even_plus_even_is_even (m n : ℕ)
   have ⟨ mEven, nEven ⟩ := evenEven
   rewrite [is_even, divides] at mEven nEven
   rewrite [is_even, divides]
-  have ⟨ m1, mDef ⟩ := mEven
-  have ⟨ n1, nDef ⟩ := nEven
+  apply Exists.intro 0
+  have ⟨ k, mDef ⟩ := mEven
+  have ⟨ k2, nDef ⟩ := nEven
   rewrite [← nDef, ← mDef]
-  
-
-
   sorry
