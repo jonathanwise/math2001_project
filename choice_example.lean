@@ -5,6 +5,10 @@ open Classical
 #print Nonempty
 #print indefiniteDescription
 example { S : Type } { P : S → Prop } { Q : Prop }
-( h : ∃ (x : S), P x ) ( h' : ∀ (x : S), ( P x → Q ) ) 
+( h : ∃ (x : S), P x ) ( h' : ∀ (x : S), ( P x → Q ) )
 : Q := by
-  sorry
+  let a := choose (h)
+  have pa := choose_spec (h)
+  have pxq := h' a
+  have hq := pxq pa
+  exact hq
