@@ -3,4 +3,6 @@ import times_comm
 import times_one
 
 theorem one_times (n : ℕ) : 1 * n = n := by
-  sorry
+  rewrite[times_comm]
+  rewrite[times_one]
+  rfl
