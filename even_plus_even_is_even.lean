@@ -6,6 +6,10 @@ theorem even_plus_even_is_even (m n : ℕ)
   intro evenEven
   have ⟨ mEven, nEven ⟩ := evenEven
   rewrite [is_even, divides] at mEven nEven
+  /- This proof has an error here.  It is 
+  possible that you were working with a different
+  version of the definition of evenness from
+  what is currently in the repository. -/
   rewrite [is_even, divides]
   apply Exists.intro 0
   have ⟨ k, mDef ⟩ := mEven

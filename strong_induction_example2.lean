@@ -25,17 +25,6 @@ example ( n : ℕ )
   induction n using strong_induction
   case ih n ih =>
   rcases trichotomy n with h|h|h
-<<<<<<< HEAD
-  · -- n = 0
-    rewrite [h]
-    decide
-  · -- n = 1
-    rewrite [h]
-    decide
-  · -- n = m + 2
-    sorry
-  sorry
-=======
   /-rcases does cases recursively
   on the whole thing, otherwise
   we would have to do cases on the
@@ -45,7 +34,6 @@ example ( n : ℕ )
     and only focus on one case at a time-/
     rewrite [h]
     decide
-
     sorry
   · -- n =1
     rewrite [h]
@@ -53,4 +41,3 @@ example ( n : ℕ )
     sorry
   · -- n = m + 2
     sorry
->>>>>>> upstream/main
